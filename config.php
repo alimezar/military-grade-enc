@@ -1,0 +1,3 @@
+<?php
+$ENC_SECRET_KEY = "GIUCTF{M1LITARYCryp70}";
+?>
