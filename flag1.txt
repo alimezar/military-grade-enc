@@ -1,1 +1,0 @@
-GIUCTF{DH38GH2_CHG93F2_auth_bypass_works!}

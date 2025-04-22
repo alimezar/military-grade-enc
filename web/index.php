@@ -47,7 +47,7 @@ if (isset($_COOKIE["secure_cookie"]) && isset($_COOKIE["user"])) {
     $user = $_COOKIE["user"];
     if (verify_cookie($ENC_SECRET_KEY)) {
         if ($user === "admin") {
-            echo "congrats: " . file_get_contents("/flag1.txt") . ". But can you get the key?";
+            echo "congrats, But can you get the key?";
         } else {
             $length = strlen($_SERVER["HTTP_USER_AGENT"]);
             print "<p>You are logged in as " . $user . ":" . str_repeat("*", $length);
