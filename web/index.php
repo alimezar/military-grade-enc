@@ -47,12 +47,12 @@ if (isset($_COOKIE["secure_cookie"]) && isset($_COOKIE["user"])) {
     $user = $_COOKIE["user"];
     if (verify_cookie($ENC_SECRET_KEY)) {
         if ($user === "admin") {
-            echo "congrats, But can you get the key?";
+            echo "congrats: " . file_get_contents("/flag1.txt") . ". But can you get the key?";
         } else {
             $length = strlen($_SERVER["HTTP_USER_AGENT"]);
-            print "<p>You are logged in as " . $user . ":" . str_repeat("*", $length);
-            print "<p>This cookie is protected with state-of-the-art military grade en<b>crypt</b>ion!";
-            print "<!-- TODO remember to remove .bak files -->";
+            print "<p>Hello! You are currently logged in as " . $user;
+            print "<p>Please remember that this cookie is protected with state-of-the-art military grade encryption and cannot be decrypted!!";
+            print "<!-- DEV Ali: which one of you idiots left the .bak files?? Remove them Immediately -->";
         }
     } else {
         print "<p>You are not logged in";

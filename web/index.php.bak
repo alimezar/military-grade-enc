@@ -47,11 +47,11 @@ if (isset($_COOKIE["secure_cookie"]) && isset($_COOKIE["user"])) {
     $user = $_COOKIE["user"];
     if (verify_cookie($ENC_SECRET_KEY)) {
         if ($user === "admin") {
-            echo "congrats, But can you get the key?";
+            echo "Web Flag awaits you here!";
         } else {
             $length = strlen($_SERVER["HTTP_USER_AGENT"]);
             print "<p>You are logged in as " . $user . ":" . str_repeat("*", $length);
-            print "<p>This cookie is protected with state-of-the-art military grade en<b>crypt</b>ion!";
+            print "<p>Please remember that this cookie is protected with state-of-the-art military grade encryption and cannot be decrypted!!";
         }
     } else {
         print "<p>You are not logged in";
