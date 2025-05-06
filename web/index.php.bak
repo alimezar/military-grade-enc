@@ -9,6 +9,15 @@ $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'n/a';
    Anything after byte 8 is ignored.  
    That’s why we split the cookie payload into 8-byte blocks. */
 
+function make_auth_cookie($session,$ua,$key,$salt){
+    $payload = "{$session}::{$ua}::{$key}";          
+    $tok     = '';
+    foreach (str_split($payload,8) as $chunk){
+        $tok .= crypt($chunk,$salt);                 // same salt every chunk
+    }
+    return $tok;
+}
+
 if (!cookies_present()) {
     $salt    = rand_salt();
     $session = 'guest';
